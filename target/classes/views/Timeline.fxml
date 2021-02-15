@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="TimelineContainer" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TimelineController">
+   <children>
+      <HBox fx:id="timelineBackgroundHolder" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" style="-fx-background-color: #434FE2;">
+         <children>
+            <Region fx:id="leftSpacer" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" prefWidth="0.0" />
+         </children>
+      </HBox>
+   </children>
+</StackPane>
