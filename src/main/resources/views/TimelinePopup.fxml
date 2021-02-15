@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TimelinePopupController">
+   <children>
+      <VBox fx:id="createNewTimeline" fillWidth="false" maxWidth="-Infinity" minHeight="400.0" minWidth="450.0" prefWidth="450.0">
+         <children>
+            <Pane prefWidth="450.0">
+               <children>
+                  <Label fx:id="WindowTitle" prefHeight="45.0" prefWidth="451.0" style="-fx-background-color: #434FE2;" text="New Timeline" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </Pane>
+            <TextField fx:id="timelineName" prefHeight="40.0" prefWidth="450.0" promptText="Timeline Name">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextField>
+            <TextArea fx:id="timelineDescription" prefHeight="110.0" promptText="Timeline Description">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </TextArea>
+            <Label fx:id="timeUnitLabel" prefHeight="18.0" prefWidth="142.0" text="Time Unit" textFill="#807d7d">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="timeUnitBox" prefHeight="40.0" prefWidth="516.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                     <String fx:value="Centuries" />
+                     <String fx:value="Years" />
+                     <String fx:value="Months" />
+                     <String fx:value="Days" />
+                     <String fx:value="Hours" />
+                     <String fx:value="Minutes" />
+                     <String fx:value="Seconds" />
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Label fx:id="timeFrameLabel" prefHeight="18.0" prefWidth="142.0" text="Time Frame" textFill="#807d7d">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="10.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <HBox prefWidth="478.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <children>
+                  <DatePicker fx:id="startDatePicker" editable="false" prefHeight="38.0" prefWidth="200.0" promptText="Start Date">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Label contentDisplay="CENTER" ellipsisString="-" graphicTextGap="0.0" prefWidth="30.0" text="-" textAlignment="CENTER" textFill="#c8c8c8">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="9.0" />
+                     </padding>
+                  </Label>
+                  <DatePicker fx:id="endDatePicker" editable="false" prefHeight="39.0" prefWidth="200.0" promptText="End Date">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+            <HBox maxWidth="-Infinity" prefWidth="450.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="deleteButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#deleteTimeline" prefHeight="27.0" prefWidth="85.0" style="-fx-background-color: #eb4034;" text="Delete" textFill="WHITE" visible="false" />
+                  <Button fx:id="cancelButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#closePopup" prefHeight="27.0" prefWidth="85.0" text="Cancel">
+                     <HBox.margin>
+                        <Insets left="165.0" right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="createButton" layoutX="10.0" layoutY="10.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveTimeline" prefHeight="27.0" prefWidth="85.0" style="-fx-background-color: #434FE2;" text="Create" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

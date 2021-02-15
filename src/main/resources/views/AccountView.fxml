@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="accountview" prefHeight="650.0" prefWidth="999.0" stylesheets="@../Style/account.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AccountViewController">
+
+
+   <children>
+      <StackPane fx:id="LoginBox" prefHeight="650.0" prefWidth="500.0" style="-fx-background-color: #434FE2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="368.0" prefWidth="250.0" StackPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" maxWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" text="Hi There!" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="UserNameTextField" prefHeight="26.0" prefWidth="167.0" promptText="Insert Username">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <Region prefHeight="10.0" prefWidth="700.0" />
+                  <PasswordField fx:id="UserNamePasswordField" promptText="Insert password">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </PasswordField>
+                  <Region prefHeight="15.0" prefWidth="700.0" />
+                  <Button fx:id="LogInButton" alignment="BASELINE_RIGHT" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#loginPress" style="-fx-background-color: #FFFFFF;" text="Login" textFill="#434fe2">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="5.0" left="15.0" right="15.0" top="4.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <StackPane fx:id="createAccountStackPane" layoutX="500.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="createAccountVBox" alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="500.0">
+               <children>
+                  <Label fx:id="createAccountLabel" alignment="CENTER" prefHeight="78.0" prefWidth="250.0" text="Create Account" textFill="#8a8a8a" VBox.vgrow="NEVER">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="createAccountUsername" prefWidth="220.0" promptText="Insert Username">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></TextField>
+                  <TextField fx:id="createAccountFullName" prefWidth="220.0" promptText="Insert Full Name">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></TextField>
+                  <PasswordField id="pwd_field" fx:id="createAccountPassword" prefWidth="220.0" promptText="Insert Password" style="-fx-background-radius: 3 3 0 0;" styleClass="pwd_field">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></PasswordField>
+                  <ProgressBar fx:id="createAccountPasswordStrengthBar" nodeOrientation="LEFT_TO_RIGHT" prefHeight="6.0" prefWidth="220.0" progress="0.0" style="-fx-background-radius: 0 0 3 3; -fx-border-radius: 0 0 3 3;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></ProgressBar>
+                  <TextField fx:id="createAccountPasswordHint" alignment="BOTTOM_LEFT" prefWidth="220.0" promptText="Password Hint (optional)">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></TextField>
+                  <HBox fx:id="createAccountHBox" alignment="CENTER_LEFT" fillHeight="false" prefHeight="27.0" prefWidth="220.0">
+                     <children>
+                        <Circle fx:id="imageCreateAccount" fill="#f8f8f8" radius="20.0" stroke="#dadada" strokeType="INSIDE" />
+                        <VBox prefHeight="200.0">
+                           <children>
+                              <Label alignment="CENTER" text="Profile image" textFill="#8a8a8a">
+                                 <VBox.margin>
+                                    <Insets bottom="1.0" left="13.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="selectFileButton" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" mnemonicParsing="false" onAction="#fileChooser" prefWidth="65.0" style="-fx-background-color: #FFFFFF;" text="Select file" textFill="#434fe2">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="13.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Label fx:id="fileNotSelectedLabel" maxWidth="90.0" text="File not selected" textFill="#8a8a8a">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="4.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="16.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Button fx:id="buttonCreateAccount" alignment="CENTER" mnemonicParsing="false" onAction="#createAccount" style="-fx-background-color: #434FE2; -fx-text-fill: #FFFFFF; -fx-font-weight: bold;" text="Create Account" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="100.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="15.0" right="15.0" top="4.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+      <Button fx:id="goBackButton" alignment="BASELINE_RIGHT" graphicTextGap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #FFFFFF;" text="Go Back" textFill="#434fe2" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="15.0" right="15.0" top="4.0" />
+         </padding>
+         <opaqueInsets>
+            <Insets top="600.0" />
+         </opaqueInsets>
+      </Button>
+   </children>
+</AnchorPane>
